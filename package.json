@@ -1,0 +1,29 @@
+{
+  "name": "sierra-adale",
+  "version": "1.0.0",
+  "description": "SIERRA ADALE - aplicación de escritorio basada en una web futurista",
+  "main": "electron-main.js",
+  "author": "Johann Sebastian Moreno",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.sierraadale.desktop",
+    "productName": "SIERRA ADALE",
+    "directories": { "output": "release" },
+    "files": ["index.html", "styles.css", "script.js", "electron-main.js", "package.json"],
+    "win": { "target": ["nsis"], "icon": "assets/icon.ico" },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
